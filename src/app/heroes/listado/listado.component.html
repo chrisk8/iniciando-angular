@@ -1,0 +1,28 @@
+<p>Listado de heroes</p>
+<hr>
+
+<ul>
+    <!-- DIRECTIVA *NG-FOR
+    Esto es un ciclo for que Angular proporciona para recorrer elementos de un arreglo.
+    heroe hace referencia a cada elemento del arregloheroes hace referencia a la propiedad de la clase ListadoComponent -->
+    <li *ngFor="let heroe of heroes; let i = index;">
+        {{ i + 1 }} - {{ heroe }}
+    </li>
+</ul>
+<hr>
+
+<button (click)="borrarHeroe()">
+    Borrar 
+</button>
+
+<div *ngIf="heroeBorrado !== ''; else noBorrado">
+    <h3>Heroe borrado: <small> {{ heroeBorrado }} </small></h3>
+</div>
+
+<ng-template #noBorrado>
+    <h3>Aun no borra ningun heroe </h3>
+</ng-template>
+
+
+
+
